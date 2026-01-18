@@ -3,85 +3,452 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshit Sharma | Portfolio</title>
+  <title>Harshit Sharma | Research Portfolio</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #111;
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --brand:#1f2937;
+      --accent:#2563eb;
+      --border:#e2e8f0;
     }
-    header {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
-    header h1 {
-      margin: 0;
-      font-size: 40px;
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:22px;
     }
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
+
+    header{
+      background:var(--brand);
+      color:#fff;
+      padding:48px 0;
     }
-    section {
-      max-width: 900px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
+    .hero{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
     }
-    h2 {
-      margin-top: 0;
+    .hero h1{
+      margin:0 0 8px 0;
+      font-size:38px;
+      letter-spacing:0.2px;
     }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #111827;
-      color: white;
-      margin-top: 20px;
+    .hero p{
+      margin:0;
+      opacity:0.92;
+      font-size:16px;
     }
-    a {
-      color: #2563eb;
-      text-decoration: none;
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    .badge{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.20);
+      color:#fff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+      margin-top:20px;
+    }
+    @media (min-width: 960px){
+      .grid{
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px 18px;
+      box-shadow:0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    h2{
+      margin:0 0 12px 0;
+      font-size:18px;
+      color:var(--text);
+    }
+    .subtle{
+      color:var(--muted);
+      font-size:14px;
+      margin:0;
+    }
+
+    .list{
+      margin:10px 0 0 0;
+      padding-left:18px;
+    }
+    .list li{margin-bottom:8px}
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    @media (min-width: 700px){
+      .two-col{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    .kpi{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (min-width:700px){
+      .kpi{
+        grid-template-columns:1fr 1fr 1fr;
+      }
+    }
+    .kpi .item{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      background:#fbfdff;
+    }
+    .kpi .num{
+      font-weight:700;
+      font-size:20px;
+      margin:0;
+    }
+    .kpi .lbl{
+      margin:4px 0 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .pub{
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .pub li{
+      padding:12px 0;
+      border-top:1px dashed var(--border);
+    }
+    .pub li:first-child{border-top:none}
+    .pub .title{
+      margin:0 0 4px 0;
+      font-weight:700;
+      font-size:14.5px;
+    }
+    .pub .meta{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    footer{
+      margin:28px 0 18px 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .btnrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+    .btn{
+      display:inline-block;
+      background:#fff;
+      border:1px solid rgba(255,255,255,0.25);
+      color:var(--brand);
+      padding:9px 12px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:13px;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.35);
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Harshit Sharma</h1>
-    <p>PhD Scholar | Computer Science & Engineering</p>
-  </header>
+<header>
+  <div class="container hero">
+    <div>
+      <h1>Harshit Sharma</h1>
+      <p>PhD Research Scholar (CSE) at MNIT Jaipur | Machine Learning • Graph Neural Networks • Cryptography & Security</p>
+      <div class="badge-row">
+        <span class="badge">Gohana, Sonipat, Haryana</span>
+        <span class="badge">UGC-NET Qualified (CS)</span>
+        <span class="badge">6 Q1 Journals</span>
+        <span class="badge">Scopus Conferences</span>
+        <span class="badge">Reviewer (Q1/Q2)</span>
+      </div>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a PhD scholar in Computer Science and Engineering at MNIT Jaipur.
-      My research interests include Machine Learning, Deep Learning, and Healthcare AI.
-    </p>
+      <div class="btnrow">
+        <a class="btn" href="#publications">Publications</a>
+        <a class="btn secondary" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div>
+      <p style="margin:0; font-weight:700;">Quick Links</p>
+      <p style="margin:8px 0 0 0; opacity:0.92;">
+        Email: <a style="color:#fff; text-decoration:underline" href="mailto:harshit.sharma.gohana@gmail.com">harshit.sharma.gohana@gmail.com</a><br>
+        LinkedIn: <a style="color:#fff; text-decoration:underline" href="https://linkedin.com/in/researcherharshit" target="_blank">linkedin.com/in/researcherharshit</a><br>
+        Phone: +91 8053182376
+      </p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="grid">
+    <div class="card">
+      <h2>Research Profile</h2>
+      <p class="subtle">
+        PhD research scholar in Computer Science and Engineering at Malaviya National Institute of Technology (MNIT) Jaipur
+        with strong research and teaching experience. Author of 6 Q1 journal publications (5 as first author), Scopus indexed
+        conference papers and book chapters. Research interests include Graph Neural Networks, Machine Learning, and Cryptography & Security.
+      </p>
+
+      <div class="kpi">
+        <div class="item">
+          <p class="num">6</p>
+          <p class="lbl">Q1 Journal Papers</p>
+        </div>
+        <div class="item">
+          <p class="num">4</p>
+          <p class="lbl">Scopus Conferences</p>
+        </div>
+        <div class="item">
+          <p class="num">4</p>
+          <p class="lbl">Reviewer Roles</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>Contact</h2>
+      <p class="subtle"><b>Location:</b> Gohana, Sonipat, Haryana - 131301</p>
+      <p class="subtle"><b>Email:</b> harshit.sharma.gohana@gmail.com</p>
+      <p class="subtle"><b>LinkedIn:</b> linkedin.com/in/researcherharshit</p>
+      <p class="subtle"><b>Phone:</b> +91 8053182376</p>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin:14px 0">
+
+      <h2>Research Profiles</h2>
+      <ul class="list">
+        <li>Vidwan ID: 665389</li>
+        <li>Scopus ID: 60047115400</li>
+        <li>Google Scholar: quIkTaUAAAAJ</li>
+        <li>Web of Science: OXC-6547-2025</li>
+        <li>ResearchGate: Harshit-Sharma-31</li>
+        <li>ORCID: 0009-0008-3767-9519</li>
+      </ul>
+    </div>
   </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>Medical Image Analysis using Deep Learning</li>
-      <li>Graph Neural Networks for Healthcare</li>
-      <li>AI-based Decision Support Systems</li>
+  <section class="two-col">
+    <div class="card">
+      <h2>Education</h2>
+      <ul class="list">
+        <li><b>Ph.D. (CSE)</b> | MNIT Jaipur | Grade: 9.00 (Ongoing) | 07/2025 – Present</li>
+        <li><b>M.Tech. (CSE)</b> | Chandigarh University | Grade: 8.00 | 08/2021 – 06/2023</li>
+        <li><b>B.Tech. (CSE)</b> | Kurukshetra University | Grade: 8.36 | 08/2017 – 06/2021</li>
+        <li><b>Class XII</b> | GVM Gohana (CBSE) | Grade: 8.24 | 04/2015 – 04/2016</li>
+        <li><b>Class X</b> | GVM Gohana (CBSE) | Grade: 8.00 | 04/2013 – 04/2014</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Technical Skills</h2>
+      <ul class="list">
+        <li><b>Programming:</b> C, C++, Python</li>
+        <li><b>Database:</b> MySQL, SQLite</li>
+        <li><b>Research Tools:</b> MATLAB, Overleaf, Jupyter Notebook, Google Colab</li>
+        <li><b>Core CS:</b> DSA, OOP, RDBMS, Recommender Systems, Operating Systems</li>
+        <li><b>Machine Learning:</b> Supervised/Unsupervised, NLP, Computer Vision, Deep Learning</li>
+        <li><b>Roles:</b> Educator, Researcher, Trainer, Mentor</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div class="card">
+      <h2>Professional Experience</h2>
+      <p class="subtle"><b>Assistant Professor (CSE)</b> | Manipal University Jaipur | 02/2024 – 07/2025</p>
+      <ul class="list">
+        <li>Supervised two M.Tech students, leading to two conference publications and thesis defenses.</li>
+        <li>Trained 150+ students through placement-oriented courses (technical + soft skills).</li>
+        <li>Delivered lectures to UG/PG batches of 70+ students; average feedback 4.8/5.</li>
+      </ul>
+
+      <p class="subtle" style="margin-top:14px;"><b>Software Engineer Intern</b> | Unisys Global Services, Bangalore | 03/2023 – 07/2023</p>
+      <ul class="list">
+        <li>Developed a C#.NET application and completed project one month ahead of schedule.</li>
+        <li>Supported debugging, testing, and refinement of modules for smooth deployment.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Courses Taught</h2>
+      <ul class="list">
+        <li><b>Postgraduate:</b> MLOps, Advanced Data Structures & Algorithms, Deep Learning</li>
+        <li><b>Undergraduate:</b> Operating Systems, Object Oriented Programming, Recommender System</li>
+      </ul>
+
+      <h2 style="margin-top:16px;">Leadership & Responsibilities</h2>
+      <ul class="list">
+        <li>Social Media Coordinator (Academic outreach)</li>
+        <li>Event Coordinator (Academic & student events)</li>
+        <li>Placement Coordinator (Student placements)</li>
+        <li>Class Coordinator (Academic communication)</li>
+        <li>Course Coordinator (Planning & delivery)</li>
+        <li>Award: “Best Researcher” during post-graduation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div class="card">
+      <h2>Achievements & Certifications</h2>
+      <ul class="list">
+        <li>Qualified <b>UGC–NET</b> in Computer Science (June 2024 and December 2024)</li>
+        <li>Qualified State-Level <b>HTET (Computer Science)</b>, 2021</li>
+        <li>Computer Vision Specialization (Coursera)</li>
+        <li>Natural Language Processing Specialization (Coursera)</li>
+        <li>Generative AI for Data Scientists Specialization (IBM)</li>
+        <li>Data Science and Machine Learning Specialization (IBM)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Reviewer Experience</h2>
+      <ul class="list">
+        <li>Cluster Computing (Q1 SCI)</li>
+        <li>Scientific Reports (Q1 SCI)</li>
+        <li>BMC Medical Imaging (Q2 SCI)</li>
+        <li>Discover Applied Sciences (Q2 SCI)</li>
+      </ul>
+
+      <h2 style="margin-top:16px;">Faculty Development Programmes</h2>
+      <ul class="list">
+        <li>Redefining Teaching Through AI, LMS, and Digital Pedagogies (MNIT Jaipur)</li>
+        <li>NEP 2020 Orientation & Sensitization Programme (Malaviya Mission Teacher Training Centre)</li>
+        <li>Mastering Research Methods and Quality Publication Strategies (Manipal University Jaipur)</li>
+        <li>Developing the Future Workforce: Designing AI & Analytics Curricula (SAS)</li>
+        <li>The Dale Carnegie Program on Training Excellence (Dale Carnegie & Associates)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="publications">
+    <h2>Publications</h2>
+    <p class="subtle">Selected publications from journals, conferences, and book chapters.</p>
+
+    <h2 style="margin-top:14px;">Journals (Total: 6)</h2>
+    <ul class="pub">
+      <li>
+        <p class="title">Deep Learning for Sustainable Development Across Climate, Energy, Agriculture and Urban Systems</p>
+        <p class="meta">Discover Sustainability, 2025 | DOI: 10.1007/s43621-025-02186-6</p>
+      </li>
+      <li>
+        <p class="title">NeuroCrypt: Entropy-Constrained Neural Key Generation via Contrastive Learning and Fuzzy Extraction From Biometrics</p>
+        <p class="meta">IEEE Access, 2025 | DOI: 10.1109/ACCESS.2025.3628173</p>
+      </li>
+      <li>
+        <p class="title">Multimodal Graph Neural Networks for Earth Observation and Sustainable Resource Management: A Comprehensive Review and Research Roadmap</p>
+        <p class="meta">Discover Sustainability, 2025 | DOI: 10.1007/s43621-025-02317-z</p>
+      </li>
+      <li>
+        <p class="title">Quantum-Inspired Hyperchaotic Bio-DNA Image Encryption for Real-Time Medical Security</p>
+        <p class="meta">IEEE Access, 2025 | DOI: 10.1109/ACCESS.2025.3625765</p>
+      </li>
+      <li>
+        <p class="title">Causal Representation Learning for Predicting Autoimmune Disease Progression From Longitudinal Multimodal Clinical Data</p>
+        <p class="meta">IEEE Access, 2025 | DOI: 10.1109/ACCESS.2025.3598276</p>
+      </li>
+      <li>
+        <p class="title">Patient-Specific Digital Twins for Personalized Healthcare: A Hybrid AI and Simulation-Based Framework</p>
+        <p class="meta">IEEE Access, 2025 | DOI: 10.1109/ACCESS.2025.3598130</p>
+      </li>
+    </ul>
+
+    <h2 style="margin-top:14px;">Conferences (Total: 4)</h2>
+    <ul class="pub">
+      <li>
+        <p class="title">Swin-SAINT: A Hybrid Transformer Framework for Multi-modal Skin Cancer Detection Using Structured Metadata and Dermoscopic Images</p>
+        <p class="meta">ICDSA 2025 (Springer, 2026) | DOI: 10.1007/978-3-032-10753-4_7</p>
+      </li>
+      <li>
+        <p class="title">Enhancing Healthcare Through Machine Learning: A Rigorous Evaluation and Comparative Study of Algorithms</p>
+        <p class="meta">ICUIS 2023 | DOI: 10.1109/ICUIS60567.2023.00015</p>
+      </li>
+      <li>
+        <p class="title">Optimised Machine Learning Algorithm for Detection and Diagnosis of Diabetes</p>
+        <p class="meta">ICCMSO 2023 | DOI: 10.1109/ICCMSO59960.2023.00018</p>
+      </li>
+      <li>
+        <p class="title">A Review Paper on Hybrid Cryptographic Algorithms in Cloud Network</p>
+        <p class="meta">INOCON 2023 | DOI: 10.1109/INOCON57975.2023.10101044</p>
+      </li>
+    </ul>
+
+    <h2 style="margin-top:14px;">Book Chapters (Total: 4)</h2>
+    <ul class="pub">
+      <li>
+        <p class="title">Machine Learning Unfolded: Classical Foundations to the Rise of Large Language Models</p>
+        <p class="meta">Springer, 2025 (Book Chapter 3)</p>
+      </li>
+      <li>
+        <p class="title">Integrating Large Language Models with Edge and Cloud Computing</p>
+        <p class="meta">Springer, 2025 (Book Chapter 13)</p>
+      </li>
+      <li>
+        <p class="title">Enhancing Heart Disease Diagnosis with Swarm Intelligence: A Hybrid ML-DL Approach</p>
+        <p class="meta">AI and IoT Technologies for Smart Healthcare Systems, 2025</p>
+      </li>
+      <li>
+        <p class="title">The Future of AI-Driven Healthcare: Exploring Generative Models in Medicine</p>
+        <p class="meta">AI and IoT Technologies for Smart Healthcare Systems, 2025 (Book Chapter 8)</p>
+      </li>
     </ul>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <b>your-email@gmail.com</b></p>
-    <p>GitHub: <a href="https://github.com/HarshitSharmaWorks">github.com/HarshitSharmaWorks</a></p>
-    <p>LinkedIn: <a href="#">Add your LinkedIn link</a></p>
-  </section>
-
   <footer>
-    <p>© 2026 Harshit Sharma</p>
+    © 2026 Harshit Sharma | Hosted on GitHub Pages
   </footer>
+
+</main>
 
 </body>
 </html>
